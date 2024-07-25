@@ -10,10 +10,10 @@ com.api.demo.models: Contém as classes de modelo.
 com.api.demo.repository: Contém as interfaces de repositório.
 
 # Dependências Principais
-Spring Boot
-Spring Web
-Spring Data JPA
-Jakarta Validation
+Spring Boot,
+Spring Web,
+Spring Data JPA,
+Jakarta Validation,
 Swagger
 
 # Endpoints da API
