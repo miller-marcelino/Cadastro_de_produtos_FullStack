@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Dízimo</title>
+
+   <!-- Link do CSS do Bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Link do JavaScript do Bootstrap -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+   <!-- Início do menu Retirado do Bootstrap -->
+   <nav class="navbar navbar-expand-sm navbar-light bg-dark">
+      <div class="container-fluid">
+         <a class="navbar-brand text-light" href="index.html">Início</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+               <li class="nav-item">
+                  <a class="nav-link text-light" href="sobre.html">Sobre</a>
+               </li>
+               <!--Início do modal-->
+               <li>
+
+                  <div class="container mt-2">
+
+                     <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#myModal">
+                        Entrar
+                     </button>
+                  </div>
+
+                  <!-- The Modal -->
+                  <div class="modal" id="myModal">
+                     <div class="modal-dialog">
+                        <div class="modal-content">
+
+                           <!-- Modal Header -->
+                           <div class="modal-header">
+                              <h4 class="modal-title">Entrar</h4>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                           </div>
+
+                           <!-- Corpo do modal (Formulário de cadastro) -->
+                           <div class="modal-body">
+
+                              <!-- Início do formulário de login -->
+                              <div class="container mt-3">
+                                 <div class="mt-4 p-5 bg-dark text-dark rounded">
+                                    <form action="/action_page.php">
+                                       <!--quando apertar entrar vai enviar para esse php-->
+                                       <h2 class="text-light">Faça Login</h2>
+                                       <div class="mb-3">
+                                          <label for="email" class="form-label text-light">Email:</label>
+                                          <input type="email" class="form-control" id="email"
+                                             placeholder="Digite seu e-mail" name="email" required>
+                                          <div class="valid-feedback">Valid.</div>
+                                          <div class="invalid-feedback ">Digite um e-mail válido.</div>
+                                       </div>
+
+                                       <div class="mb-3">
+                                          <label for="pwd" class="form-label text-light">Senha:</label>
+                                          <input type="password" class="form-control" id="pwd"
+                                             placeholder="Digite sua senha" name="pswd" required>
+                                       </div>
+
+                                       <div class="form-check mb-3">
+                                          <label class="form-check-label text-light">
+                                             <input class="form-check-input" type="checkbox" name="remember"> Lembrar
+                                             minha senha
+                                          </label>
+                                       </div>
+
+                                       <button type="submit" class="btn btn-light">Entrar</button>
+                                    </form>
+                                 </div>
+                              </div>
+                              <!-- Final do formulário de login -->
+
+                           </div>
+
+
+
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+
+                           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+
+                     </div>
+                  </div>
+         </div>
+
+
+         </li>
+         </ul>
+
+      </div>
+      </div>
+   </nav>
+   <!-- Fim do menu Retirado do Bootstrap -->
+
+   <!-- Início do Carousel Retirado do Bootstrap -->
+   <!-- Carousel -->
+   <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+         <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+         <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+         <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+         <div class="carousel-item active">
+            <img src="img/1.png" height="100px" alt="Los Angeles" class="d-block" style="width:100%">
+
+         </div>
+         <div class="carousel-item">
+            <img src="img/2.webp" height="100px" alt="Chicago" class="d-block" style="width:100%">
+
+         </div>
+         <div class="carousel-item">
+            <img src="img/3.png" height="100px" alt="New York" class="d-block" style="width:100%">
+
+         </div>
+      </div>
+
+      <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+         <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+         <span class="carousel-control-next-icon"></span>
+      </button>
+   </div>
+
+   <!-- Final do Carousel Retirado do Bootstrap -->
+
+   <!--Início do corpo(formulario)-->
+
+   <div class="container mt-5 bg-dark">
+      <div class="row">
+         <div class="col-sm-12">
+            <!-- AQUI SEU CONTEUDO -->
+            <h3 class="text-light">Cadastro do Dizimista</h3>
+            <div class="container">
+               <form action="processamentos.php" method="post" id="meuform">
+
+                  <div class="row">
+
+                     <div class=" col-6">
+                        <label class="form-label text-light" for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" size="100" placeholder="Informe o nome"
+                           class="form-control" onblur="" onkeyup="converterParaMaiusculo(this)">
+                     </div>
+
+                     <div class=" col-3" id="divpj">
+                        <label class="form-label text-light">CPF:</label>
+                        <input placeholder="Informe o cpf" class="form-control" type="text" id="cnpj" name="cnpj"
+                           onblur="">
+                     </div>
+
+                     <div class=" col">
+                        <label class="form-label text-light">E-mail:</label>
+                        <input placeholder="Informe o e-mail" type="email" class="form-control" id="email" name="email"
+                           size="60" onkeyup="converterParaMinusculo(this)">
+                     </div>
+
+                  </div>
+
+
+                  <div class="row">
+
+                     <div class=" col">
+                        <label class="form-label text-light">Data de Nascimento:</label>
+                        <input type="date" class="form-control" id="datanascimento" name="datanascimento">
+                     </div>
+
+                     <div class=" col-2">
+                        <label class="form-label text-light">DDD:</label>
+                        <input type="text" class="form-control" id="DDD" name="ddd" maxlength="2">
+                     </div>
+
+                     <div class=" col">
+                        <label class="form-label text-light">Celular:</label>
+                        <input type="number" class="form-control" id="celular" name="Celular">
+                     </div>
+                  </div>
+
+                  <div class="row">
+
+                     <div class=" col">
+                        <label class="form-label text-light">Telefone:</label>
+                        <input type="number" class="form-control" id="telefone" name="telefone">
+                     </div>
+
+                     <div class=" col">
+                        <label class="form-label text-light">O número de celular informado é whatsapp?</label>
+                        <div class="form-check">
+                           <input type="radio" class="form-check-input" id="radiomasculino" name="sexo" value="M">
+                           <label class="form-label text-light" for="html">Sim</label>
+                        </div>
+                        <div class="form-check">
+                           <input type="radio" class="form-check-input" id="radiofeminino" name="sexo" value="F">
+                           <label class="form-label text-light" for="css">Não</label>
+                        </div>
+
+                     </div>
+                  </div>
+
+            </div>
+
+         </div>
+         <div class="row">
+
+            <div class=" col">
+               <label class="form-label text-light">Nome da comunidade pertencente:</label>
+               <input type="number" class="form-control" id="telefone" name="telefone">
+            </div>
+
+            <div class=" col">
+               <label class="form-label text-light">Igreja é uma capela ou uma Matriz?</label>
+               <div class="form-check">
+                  <input type="radio" class="form-check-input" id="radiomatriz" name="sexo" value="Matriz">
+                  <label class="form-label text-light" for="html">Matriz</label>
+               </div>
+               <div class="form-check">
+                  <input type="radio" class="form-check-input" id="radiocapela" name="sexo" value="Capela">
+                  <label class="form-label text-light" for="css">Capela</label>
+               </div>
+
+            </div>
+
+            <div class=" col">
+               <label class="form-label text-light">Religião do Dizimista.</label>
+
+               <div class="form-check">
+                  <input type="radio" class="form-check-input" id="radiocatolica" name="religiao" value="catolica">
+                  <label class="form-label text-light" for="html">Católica Apostólica</label>
+
+               </div>
+               <div class="form-check">
+                  <input type="radio" class="form-check-input" id="radiobatista" name="religiao" value="batista">
+                  <label class="form-label text-light" for="css">Batista</label>
+               </div>
+
+               <div class="form-check">
+                  <input type="radio" class="form-check-input" id="radioassembleia" name="religiao" value="assembleia">
+                  <label class="form-label text-light" for="css">Assembleia</label>
+               </div>
+
+               <div class="form-check">
+                  <input type="radio" class="form-check-input" id="radiooutrareligiao" name="religiao"
+                     value="assembleia">
+                  <label class="form-label text-light" for="css">Outra Religião</label>
+               </div>
+
+
+            </div>
+         </div>
+
+         <div class="row">
+            <div class=" col-6">
+               <label class="form-label text-light" for="nome">Valor do Dízimo em reais R$:</label>
+               <input type="text" id="nome" name="nome" size="100" placeholder="Informe valor do Dízimo em reais"
+                  class="form-control" onblur="" onkeyup="converterParaMaiusculo(this)">
+            </div>
+
+            <div class=" col-6">
+               <label class="form-label text-light" for="nome">Nome do pároco ou responsável:</label>
+               <input type="text" id="nome" name="nome" size="100" placeholder="Informe o nome do pároco ou responsável"
+                  class="form-control" onblur="" onkeyup="converterParaMaiusculo(this)">
+            </div>
+
+         </div>
+
+         <div class="row">
+
+            <div class="col-3">
+               <label class="form-label text-light">UF:</label>
+               <select id="uf" name="uf" class="form-select">
+
+                  <option value="AC">Acre</option>
+                  <option value="AL">Alagoas</option>
+                  <option value="AP">Amapá</option>
+                  <option value="AM">Amazonas</option>
+                  <option value="BA">Bahia</option>
+                  <option value="CE">Ceará</option>
+                  <option value="DF">Distrito Federal</option>
+                  <option value="ES">Espírito Santo</option>
+                  <option value="GO">Goiás</option>
+                  <option value="MA">Maranhão</option>
+                  <option value="MT">Mato Grosso</option>
+                  <option value="MS">Mato Grosso do Sul</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="PA">Pará</option>
+                  <option value="PB">Paraíba</option>
+                  <option value="PR">Paraná</option>
+                  <option value="PE">Pernambuco</option>
+                  <option value="PI">Piauí</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="RN">Rio Grande do Norte</option>
+                  <option value="RS">Rio Grande do Sul</option>
+                  <option value="RO">Rondônia</option>
+                  <option value="RR">Roraima</option>
+                  <option value="SC">Santa Catarina</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="SE">Sergipe</option>
+                  <option value="TO">Tocantins</option>
+
+               </select>
+            </div>
+
+            <div class=" col">
+               <label class="form-label text-light" for="nome">Cidade:</label>
+               <input type="text" id="cidade" name="cidade" size="100" placeholder="Informe o nome da cidade"
+                  class="form-control" onblur="" onkeyup="converterParaMaiusculo(this)">
+            </div>
+
+            <div class=" col">
+               <label class="form-label text-light" for="nome">Bairro:</label>
+               <input type="text" id="bairro" name="bairro" size="100" placeholder="Informe o nome do bairro"
+                  class="form-control" onblur="" onkeyup="converterParaMaiusculo(this)">
+            </div>
+
+         </div>
+
+         <div class=" col">
+            <label class="form-label text-light" for="nome">Rua:</label>
+            <input type="text" id="rua" name="rua" size="100" placeholder="Informe o nome da rua" class="form-control"
+               onblur="" onkeyup="converterParaMaiusculo(this)">
+         </div>
+
+         <div class=" col">
+            <label class="form-label text-light" for="nome">Número:</label>
+            <input type="text" id="numero" name="numero" size="100" placeholder="Informe o número" class="form-control"
+               onblur="" onkeyup="converterParaMaiusculo(this)">
+         </div>
+
+         <div class=" col">
+            <label class="form-label text-light" for="nome">Ponto de Referência:</label>
+            <input type="text" id="referencia" name="referencia" size="100" placeholder="Informe um ponto de referência"
+               class="form-control" onblur="" onkeyup="converterParaMaiusculo(this)">
+         </div>
+
+         <div class=" col">
+            <label class="form-label text-light" for="nome">Cep:</label>
+            <input type="text" id="cep" name="cep" size="100" placeholder="Informe o cep" class="form-control" onblur=""
+               onkeyup="converterParaMaiusculo(this)">
+         </div>
+
+         <div class="row">
+
+            <div class=" col-4">
+               <label class="form-label text-light">O pagamento foi efetuado?</label>
+               <div class="form-check">
+                  <input type="radio" class="form-check-input" id="radiosim" name="sexo" value="sim">
+                  <label class="form-label text-light" for="html">Sim</label>
+               </div>
+               <div class="form-check">
+                  <input type="radio" class="form-check-input" id="radionao" name="sexo" value="nao">
+                  <label class="form-label text-light" for="css">Não</label>
+               </div>
+
+            </div>
+
+            <div class=" col-4">
+               <label class="form-label text-light">Qual a forma de pagamento?</label>
+               <div class="form-check">
+                  <input type="radio" class="form-check-input" id="radiopix" name="sexo" value="pix">
+                  <label class="form-label text-light" for="html">Pix</label>
+               </div>
+               <div class="form-check">
+                  <input type="radio" class="form-check-input" id="radiodinheiro" name="sexo" value="dinheiro">
+                  <label class="form-label text-light" for="css">Dinheiro</label>
+               </div>
+               <div class="form-check">
+                  <input type="radio" class="form-check-input" id="radiooutra" name="outra" value="outra">
+                  <label class="form-label text-light" for="css">Outra forma</label>
+               </div>
+
+            </div>
+
+            <div class=" col-4">
+               <label class="form-label text-light">Data de pagamento:</label>
+               <input type="date" class="form-control" id="datapagamento" name="datapagamento">
+            </div>
+
+         </div>
+
+
+         <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="liaceito" name="liaceito" value="li" checked>
+            <label class="form-check-label text-light" for="check1">Li e
+               concordo</label>
+         </div>
+         <div class="">
+            <input type="reset" value="Limpar" class="btn
+              btn-warning">
+            <input type="button" id="btn1" value="Cadastrar" class="btn
+              btn-primary" onclick="validarForm();"
+               onfocus="document.getElementById('btn1').setAttribute('class', 'btn btn-primary btn-lg')"
+               onmousemove="document.getElementById('btn1').setAttribute('class', 'btn btn-primary btn-lg')"
+               onmouseleave="document.getElementById('btn1').setAttribute('class', 'btn btn-primary btn')"
+               onblur="document.getElementById('btn1').setAttribute('class', 'btn btn-primary btn')">
+         </div>
+         </form>
+      </div>
+   </div>
+
+   </div>
+   </div>
+
+
+
+
+
+   <!--Início Rodapé-->
+   <div class="mt-5 p-4 bg-dark text-white text-center">
+      <p>Desenvolvido por Miller Marcelino</p>
+   </div>
+   <!--Final Rodapé-->
+
+
+</body>
+
+</html>

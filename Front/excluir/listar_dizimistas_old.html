@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dízimo</title>
+
+    <!-- Link do CSS do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Link do JavaScript do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Início do Carousel Retirado do Bootstrap -->
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/1.png" height="100px" alt="Los Angeles" class="d-block" style="width:100%">
+
+            </div>
+            <div class="carousel-item">
+                <img src="img/2.webp" height="100px" alt="Chicago" class="d-block" style="width:100%">
+
+            </div>
+            <div class="carousel-item">
+                <img src="img/3.png" height="100px" alt="New York" class="d-block" style="width:100%">
+
+            </div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Final do Carousel Retirado do Bootstrap -->
+
+
+    <!-- Início do menu Retirado do Bootstrap -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="index.html">Início</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="sobre.html">Sobre</a>
+                    </li>
+                    <!--Início do modal-->
+                    <li>
+
+                        <div class="container mt-2">
+
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#myModal">
+                                Entrar
+                            </button>
+                        </div>
+
+                        <!-- The Modal -->
+                        <div class="modal" id="myModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Entrar</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+
+                                    <!-- Corpo do modal (Formulário de cadastro) -->
+                                    <div class="modal-body">
+
+                                        <!-- Início do formulário de login -->
+                                        <div class="container mt-3">
+                                            <div class="mt-4 p-5 bg-dark text-dark rounded">
+                                                <form action="/action_page.php">
+                                                    <!--quando apertar entrar vai enviar para esse php-->
+                                                    <h2 class="text-light">Faça Login</h2>
+                                                    <div class="mb-3">
+                                                        <label for="email" class="form-label text-light">Email:</label>
+                                                        <input type="email" class="form-control" id="email"
+                                                            placeholder="Digite seu e-mail" name="email" required>
+                                                        <div class="valid-feedback">Valid.</div>
+                                                        <div class="invalid-feedback ">Digite um e-mail válido.</div>
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label for="pwd" class="form-label text-light">Senha:</label>
+                                                        <input type="password" class="form-control" id="pwd"
+                                                            placeholder="Digite sua senha" name="pswd" required>
+                                                    </div>
+
+                                                    <div class="form-check mb-3">
+                                                        <label class="form-check-label text-light">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                name="remember"> Lembrar minha senha
+                                                        </label>
+                                                    </div>
+
+                                                    <button type="submit" class="btn btn-light">Entrar</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <!-- Final do formulário de login -->
+
+                                    </div>
+
+
+
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                                </div>
+
+                            </div>
+                        </div>
+            </div>
+
+
+            </li>
+            </ul>
+
+        </div>
+        </div>
+    </nav>
+    <!-- Fim do menu Retirado do Bootstrap -->
+
+    <!--Início do Formulário Listar Retirado do BootStrap-->
+
+    <div class="container p-5 my-5 bg-dark text-white">
+        <form action="" class="formulario" method="post">
+            <div class="row">
+                <div class="container mt-3">
+                    <h2>Lista de Dizimistas</h2>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th style="background-color: slategray;">Nome</th>
+                                <th style="background-color: slategray;">Sobrenome</th>
+                                <th style="background-color: slategray;">E-mail</th>
+                                <th style="background-color: slategray;">Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <th>Miller</th>
+                                <th>Marcelino</th>
+                                <th>miller.marcelino@hotmail.com</th>
+                                <th><button type="button" class="btn btn-warning">Editar</button> <button type="button"
+                                        class="btn btn-danger">Excluir</button></th>
+                            </tr>
+
+                            <tr>
+                                <th>Melo</th>
+                                <th>Lindo</th>
+                                <th>melo.lindo@hotmail.com</th>
+                                <th><button type="button" class="btn btn-warning">Editar</button> <button type="button"
+                                        class="btn btn-danger">Excluir</button></th>
+
+                            <tr>
+                                <th>CoisadoCoisadoCoisado</th>
+                                <th>CoisadoCoisadoCoisado</th>
+                                <th>CoisadoCoisadoCoisado@hotmail.com</th>
+                                <th><button type="button" class="btn btn-warning">Editar</button> <button type="button"
+                                        class="btn btn-danger">Excluir</button></th>
+                            </tr>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+            </div>
+        </form>
+    </div>
+    </div>
+
+
+
+
+
+
+    <!--Final do Formulário Listar Retirado do BootStrap-->
+
+    <!--Início Rodapé-->
+    <div class="mt-5 p-4 bg-dark text-white text-center">
+        <p>Desenvolvido por Miller Marcelino</p>
+    </div>
+    <!--Final Rodapé-->
+
+
+</body>
+
+</html>
